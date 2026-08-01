@@ -1,19 +1,32 @@
-class stud{
-  String _name = '';
-  int _age = 0;
-  void set(String name , int age){
-    if(age>0 && age<19){
-      this._age=age;
-      this._name = name;
-    }
+abstract class payment{
+  void pay();
+  void app();
+}
+class phonepe implements payment{
+  @override
+  void pay(){
+    print('pay sucessful');
   }
-  void getdisplay(){
-    print('name of stud $_name');
-    print('age of the stud $_age');
+  void app(){
+    print('pay through phonepe');
+  }
+}
+class gpay implements payment{
+  void pay(){
+    print('pay throught gpay');
+  }
+  void app(){
+    print('gpay is used');
+  }
+  void app2(){
+    print('app2 from grpay');
   }
 }
 void main(){
-  stud s = stud();
-  s.set('sidd', 1000);
-  s.getdisplay();
+  phonepe p = phonepe();
+  gpay gp = gpay();
+  p.pay();
+  p.app();
+  gp.pay();
+  gp.app2();
 }
